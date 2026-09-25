@@ -1,0 +1,38 @@
+{
+  "name": "srrobs-free-games",
+  "version": "2.0.0",
+  "description": "Bot Discord que anuncia jogos da Steam que estavam pagos e estão a 100% de graça (promoções temporárias, licença fica para sempre). Sem ASF, sem farm.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "start:all": "node src/start-all.js",
+    "setup": "node scripts/setup.js",
+    "dev": "node --watch src/index.js",
+    "deploy-commands": "node src/discord/deploy-commands.js",
+    "deploy-all": "node scripts/deploy-all.js",
+    "invite": "node scripts/invite.js",
+    "smoke-test": "node scripts/smoke-test.js"
+  },
+  "keywords": [
+    "discord",
+    "steam",
+    "free-games",
+    "100-off",
+    "notifier"
+  ],
+  "author": "SrRob",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "winston": "^3.15.0"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true
+  }
+}

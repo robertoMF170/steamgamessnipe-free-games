@@ -1,0 +1,12 @@
+name: srrobs-free-games
+
+# Bot só de anúncios: vigia a loja Steam e publica/apaga ofertas no Discord.
+# Sem ASF, sem farm — um único serviço.
+services:
+  bot:
+    build: .
+    container_name: srrobs-bot
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data

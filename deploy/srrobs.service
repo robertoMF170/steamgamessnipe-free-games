@@ -1,0 +1,24 @@
+[Unit]
+Description=SrRobs Free Games — anúncios de jogos Steam a 100% de graça no Discord
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=robs
+# Ajusta o WorkingDirectory para onde puseres o projeto (ex.: /opt/srrobs)
+WorkingDirectory=/opt/srrobs
+ExecStart=/usr/bin/node src/index.js
+Restart=always
+RestartSec=10
+# Segurança básica
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+# Logs vão para o journal: journalctl -u srrobs -f
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=srrobs
+
+[Install]
+WantedBy=multi-user.target
